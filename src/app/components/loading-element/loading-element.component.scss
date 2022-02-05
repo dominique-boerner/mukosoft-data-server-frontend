@@ -1,0 +1,33 @@
+.loading-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .loading {
+    background: var(--primary-color);
+    height: 3rem; width: 3rem;
+    border-radius: var(--border-radius);
+    animation: spinner ease-in-out 1s infinite;
+  }
+
+  .label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .5rem 0;
+    color: var(--primary-color);
+  }
+}
+
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    border-radius: 20px;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

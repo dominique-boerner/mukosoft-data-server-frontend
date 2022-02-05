@@ -1,0 +1,19 @@
+.header-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0 1rem;
+
+  .title {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+  .time {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}

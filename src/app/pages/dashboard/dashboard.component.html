@@ -1,0 +1,48 @@
+<h1>Dashboard</h1>
+<h2>Alle Informationen über <b>Medikamente</b> im Überblick.</h2>
+<div class="grid">
+  <div class="col-3">
+    <p-card header="Anzahl an Medikamenten">
+      <app-loading-element *ngIf="isLoading" label="Lädt Medikamente"></app-loading-element>
+      <span *ngIf="!isLoading" class="text-5xl">{{medicationCount}}</span>
+    </p-card>
+  </div>
+  <div class="col-3">
+    <p-card header="Datum">
+      <span class="text-5xl">12.01.2021</span>
+    </p-card>
+  </div>
+  <div class="col-3">
+    <p-card header="Anzahl an Mappings">
+      <span class="text-5xl">{{customMappingCount}}</span>
+    </p-card>
+  </div>
+</div>
+<h2>Alle Informationen über <b>Rezepte</b> im Überblick.</h2>
+<div class="grid">
+  <div class="xl:col-3 lg:col-3 md:col-3">
+    <p-card header="Anzahl an Rezepten">
+      <span class="text-5xl">46</span>
+    </p-card>
+  </div>
+  <div class="xl:col-2 lg:col-2 md:col-2">
+    <p-card header="Frühstück">
+      <span class="text-5xl">5</span>
+    </p-card>
+  </div>
+  <div class="xl:col-2 lg:col-2 md:col-2">
+    <p-card header="Mittag">
+      <span class="text-5xl">3</span>
+    </p-card>
+  </div>
+  <div class="xl:col-2 lg:col-2 md:col-2">
+    <p-card header="Abendbrot">
+      <span class="text-5xl">17</span>
+    </p-card>
+  </div>
+  <div class="xl:col-2 lg:col-2 md:col-2">
+    <p-card header="Snacks">
+      <span class="text-5xl">32</span>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 85vh;
+  margin: 1rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  .title {
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 1rem 0;
+    border-left: .5rem solid white;
+    transition: 200ms ease-in-out;
+
+    &:not(.active):hover {
+      cursor: pointer;
+      transform: translateX(10px);
+      opacity: .9;
+    }
+
+    &.active {
+      border-color: var(--primary-color);
+    }
+
+    .icon {
+      color: var(--primary-color);
+      padding: 0 .5rem;
+      font-size: 1.4rem;
+    }
+
+    .link {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<div class="menu shadow-1">
+  <div *ngFor="let menuItem of items" class="menu-item" [routerLink]="menuItem.routerLink" [routerLinkActive]="'active'">
+    <span class="icon" [class]="menuItem.icon"></span>
+    <a class="link" href="{{menuItem.routerLink}}">{{menuItem.label}}</a>
+  </div>
+</div>

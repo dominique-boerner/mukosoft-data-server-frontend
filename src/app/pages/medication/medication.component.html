@@ -1,0 +1,29 @@
+<h1>Medikamente</h1>
+<div class="grid">
+  <div class="col">
+    <input #filterInput type="text" pInputText (keyup)="filterBy(filterInput.value)" placeholder="ACC, Ibuprofen, ..." />
+  </div>
+</div>
+<p-table [value]="filteredMedications" responsiveLayout="scroll" [paginator]="true" [rows]="rows"
+         [(first)]="first"
+         [showCurrentPageReport]="true">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Produktnummer</th>
+      <th>ATC-Code</th>
+      <th>Name</th>
+      <th>Einheit</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-medication>
+    <tr>
+      <td>{{medication.identifier[0].value}}</td>
+      <td><a [href]="getGelbeListeUrl(medication)" target="_blank">{{medication.identifier[2].value}}</a></td>
+      <td>{{medication.identifier[1].value}}</td>
+      <td>{{medication.form.text}}</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <p>{{this.filteredMedications.length}} Medikamente wurden gefunden</p>
+  </ng-template>
+</p-table>
