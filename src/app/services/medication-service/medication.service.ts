@@ -15,12 +15,12 @@ export class MedicationService {
 
 
   async countMedications(): Promise<Response<SwissMedication[]>> {
-    const request = this.httpClient.get<Response<SwissMedication[]>>(`${environment.api.baseUrl}:${environment.api.port}/api/${environment.apiVersion}/${environment.api.v1.medication.endpoint}/${environment.api.v1.medication.getAllMedications}`).pipe();
+    const request = this.httpClient.get<Response<SwissMedication[]>>(`${environment.baseUrl}:${environment.port}/api/${environment.apiVersion}/${environment.v1.medication.endpoint}/${environment.v1.medication.getAllMedications}`).pipe();
     return await lastValueFrom(request);
   }
 
   async getAllMedications(): Promise<Response<SwissMedication[]>> {
-    const request = this.httpClient.get<Response<SwissMedication[]>>(`${environment.api.baseUrl}:${environment.api.port}/api/${environment.apiVersion}/${environment.api.v1.medication.endpoint}/${environment.api.v1.medication.getAllMedications}`).pipe();
+    const request = this.httpClient.get<Response<SwissMedication[]>>(`${environment.baseUrl}:${environment.port}/api/${environment.apiVersion}/${environment.v1.medication.endpoint}/${environment.v1.medication.getAllMedications}`).pipe();
     return await lastValueFrom(request);
   }
 }
