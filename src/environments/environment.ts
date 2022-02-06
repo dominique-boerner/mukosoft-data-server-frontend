@@ -4,17 +4,16 @@
 
 export const environment = {
   production: false,
+  apiVersion: "v1",
   api: {
-    baseUrl: "http://localhost:8080",
-    medication: {
-      endpoint: "medication",
-      getAllMedications: "getAllMedications",
-      count: "count"
+    baseUrl: "http://localhost",
+    port: "9000",
+    v1: {
+      medication: {
+        endpoint: "medication",
+        getAllMedications: ""
+      }
     },
-    cookbook: {
-      endpoint: "cookbook",
-      count: "count"
-    }
   }
 };
 

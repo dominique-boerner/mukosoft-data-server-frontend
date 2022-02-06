@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.medicationService.countMedications()
-      .then(medicationCount => this.medicationCount = medicationCount+1)
+      .then(response => this.medicationCount = response.data.length+1)
       .then(() => this.isLoading = false)
       .catch((err: HttpErrorResponse) => {
         this.messageService.add({

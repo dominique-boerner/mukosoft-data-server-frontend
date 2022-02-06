@@ -21,16 +21,18 @@ export class MedicationComponent implements OnInit {
   }
 
   loadMedications() {
-    this.medicationService.getAllMedications().then(medicationList => {
-      medicationList.forEach(medication => {
+    this.medicationService.getAllMedications().then(response => {
+
+      console.log(response)
+      response.data.forEach(medication => {
         const m: Medication = {
           resourceType: "Medication",
           identifier: [
-            {value: medication.prodno, use: "secondary"},
-            {value: medication.dsrcd, use: "usual"},
-            {value: medication.atc, use: "official"}
+            {value: medication.PRODNO, use: "secondary"},
+            {value: medication.DSCRD, use: "usual"},
+            {value: medication.ATC, use: "official"}
           ],
-          form: {text: medication.unit}
+          form: {text: medication.EinheitSwissmedic}
         };
         this.medications = [...this.medications, m];
         this.filteredMedications = [...this.medications, m];

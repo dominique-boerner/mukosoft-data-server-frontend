@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {lastValueFrom} from "rxjs";
-import {Medication} from "fhir/r4";
-import {SwissMedication} from "../../models/SwissMedication";
-import {Message} from "primeng/api";
+import {SwissMedication} from "../../models/swiss-medication";
+import {Response} from "../../models/response";
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +14,13 @@ export class MedicationService {
   }
 
 
-  async countMedications(): Promise<number> {
-    const request = this.httpClient.get<number>(`${environment.api.baseUrl}/${environment.api.medication.endpoint}/${environment.api.medication.count}`).pipe();
+  async countMedications(): Promise<Response<SwissMedication[]>> {
+    const request = this.httpClient.get<Response<SwissMedication[]>>(`${environment.api.baseUrl}:${environment.api.port}/api/${environment.apiVersion}/${environment.api.v1.medication.endpoint}/${environment.api.v1.medication.getAllMedications}`).pipe();
     return await lastValueFrom(request);
   }
 
-  async getAllMedications(): Promise<SwissMedication[]> {
-    const request = this.httpClient.get<SwissMedication[]>(`${environment.api.baseUrl}/${environment.api.medication.endpoint}/${environment.api.medication.getAllMedications}`).pipe();
+  async getAllMedications(): Promise<Response<SwissMedication[]>> {
+    const request = this.httpClient.get<Response<SwissMedication[]>>(`${environment.api.baseUrl}:${environment.api.port}/api/${environment.apiVersion}/${environment.api.v1.medication.endpoint}/${environment.api.v1.medication.getAllMedications}`).pipe();
     return await lastValueFrom(request);
   }
 }
